@@ -1,0 +1,4 @@
+input-files:
+  - main.md
+output-file: yhu_fhgr_ai.pdf
+toc: true
