@@ -79,6 +79,8 @@ Der Algorithmus läuft folgendermassen ab:
 * Wenn ein neuer Punkt hinzugefügt wird muss der Abstand zu allen anderen vorhandenen Punkten berechnet werden
 * Anschliessend schaut man sich die Abstände in einem bestimmten Radius an und es gilt der Mehrheitsentscheid
 
+> Achtung: Je höher dimensioniert der Raum ist, desto schlechter funktioniert der k-NN Algorithmus, da die Punkte je höher die Dimension wird, weiter auseinanderliegen. 
+
 ### Was ist der K-Means Algorithmus?
 Ist ebenfalls ein Standardalgorithmus zur Klassifikation. Der K-Means Algorithmus ist ein Algorithmus des `unsupervised Learnings` (d.h. wir kennen die Antwort nicht).
 
@@ -105,8 +107,10 @@ Falls wir `unklassifizierte Daten` besitzen, von denen wir die Labels nicht wiss
 * Konvergenz (Erreichung eines finalen Ergebnis) ist nicht garantiert, d.h. Algorithmus muss irgendwann abgebrochen werden (Definition maximale Anzahl von Durchläufen)
 * Ob die Klassifikation der Cluster sinnvoll ist muss der Anwender entscheiden
 * Der K-Means Algorithmus ist im Vergleich zu anderen Algorithmus zwar sehr einfach aber auch sehr schnell
-  
+ 
+
 ### Was ist die Trägheit (Inertia)?
 Ist die Summe aller Abstände von den einzelnen Punkten zum Cluster Mittelpunkt, d.h. ist die Trägheit sehr gross, sind die Punkte sehr verstreut. Es sollte jener Punkt gewählt werden, bei welchem ein Knick erfolgt.
+
 
 
