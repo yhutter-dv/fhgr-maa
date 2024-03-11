@@ -112,5 +112,55 @@ Falls wir `unklassifizierte Daten` besitzen, von denen wir die Labels nicht wiss
 ### Was ist die Trägheit (Inertia)?
 Ist die Summe aller Abstände von den einzelnen Punkten zum Cluster Mittelpunkt, d.h. ist die Trägheit sehr gross, sind die Punkte sehr verstreut. Es sollte jener Punkt gewählt werden, bei welchem ein Knick erfolgt.
 
+## 08.03.2024
 
+### Problematik - Sehr hochdimensionierter Datensatz
+* Grundsätzlich muss ein hochdimensionierter (Dimension = Kategorie) Datensatz auf möglichst wenig Dimensionen reduziert werden, ohne dass kein essenzieller Informationsverlust entsteht
+* Principal Component Analysis erlaubt Dimensionalitätsreduktion
 
+### PCA
+* Bei der PCA wird ein Vektor mit einer Matrix multipliziert
+* Die Anzahl der Spalten muss genauso gross sein wie die Anzahl der Elemente im Vektor
+* Die Anzahl der Zeilen kann variieren
+* Am Ende stehen nicht mehr die Originalkategorien drin, es ist eine Mischung aus den einzelnen Gewichtungen der Kategorien
+* Die PCA analyisiert den Datensatz und findet eine Matrix
+* Daten sind in der Regel nicht gleichmässig über alle Dimensionen verteilt (2d vs 3d)
+* Die PCA drückt jene Dimension zusammen (reduziert), in denen die Daten am wenigsten streuen
+* Hierzu können die Punkte beispielsweise auf eine Ebene proiziert werden. Hierzu wird der orthogonale Abstand (kürzester Abstand) genutzt
+* Achtung die PCA ist `kein Klassifikationsalgorithmus` sondern dient zur Vorverarbeitung der Daten
+  
+### Warum stehen die Achsen immer senkrecht zueinander?
+Weil man dann nichts "kaputt" macht, d.h. wenn man diagonal zur Tür laufen würde, dann hätte man ein wenig "Weg" kaputt gemacht. Dies passiert bei orthogonalen Achsen nicht.
+
+### Ablauf PCA
+* Finde die erste Achse auf dener die Daten am meisten streuen
+* Fine die zweite Achse (die muss senkrecht auf der ersten sein), auf der die Daten am zweitmeisten streuen
+* Die dritte Achse muss senkdrecht auf der ersten und auf der zweiten sein
+
+## Diskriminanzanalyse
+* Erlaubt multivariate Klassifikation
+* Wunsch: Die Daten sollen möglichst nahe am Mittelwert liegen, die Datencluster aber möglichst weit auseinander, sodass diese gut klassifiziert werden können.
+* Alternativwerkzeug zur PCA
+* Kann sowohl die Dimension reduzieren als auch klassifizieren
+* Es erfordert auch nicht die Normalisierung der Daten. Eine Normalisierung ist bspw. essenziell für Machinelearning (Werte zwischen 0 und 1 normieren)
+* Die Idee hinter der Diskriminanzanalyse ist, dass der Raum in dem die Daten leben in verschiedene Teilräume unterteilt werden (d.h. verschiedene Bereiche/Klassen)
+
+## Skalarprodukt
+* Wenn der erste Vektor transponiert wird und mit dem zweiten Vektor multipliziert wird entsteht das Skalarprodukt (einzelner Wert)
+* Kann genutzt werden um festzustellen ob zwei Vektoren senkrecht zueinander sind. Sind sie senkrecht, so ist das Skalarprodukt 0.
+* Die Länge des Vektors, wenn dieser Vektor auf den zweiten Vektor draufproiziert werden würde.
+* Vektoren **müssen zwingend gleich lang sein**
+* Achtung das Ergebnis ist **nicht in Einheiten auf dem Koordinatensystem**
+* Das Skalarprodukt wird bei der Diskriminanzanalyse nur dafür verwendet, dass man feststellen kann wie gross der Abstand von den einzelnen Punkten zum Ursprung (Nullpunkt) ist
+
+## Matrix
+* Matrix transponieren: Zeilen werden zu Spalten
+* Symmetrisch: Eine Matrix ist dann symmetrisch, wenn nach der Transponation die gleiche Matrix rauskommt wie vor der Transponation. Dies trifft nur auf `quadratische Matrizen` zu (Stichwort Covarianz-Matrix)
+* Diagonalmatrix: Es gibt nur Werte auf der Diagonalen und überall sonst Nullwerte
+* Einheitsmatrix: Besteht nur aus dem Wert `1`
+  
+
+## Dyadisches Produkt
+* Wenn der zweite Vektor transponiert wird und mit dem ersten Vektor multipliziert wird entsteht das dyadische Produkt (Matrix).
+* Vektoren **müssen nicht zwingend gleich lang sein**
+* 
