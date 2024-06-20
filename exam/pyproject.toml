@@ -1,0 +1,20 @@
+[project]
+name = "Exam"
+version = "0.1"
+description = ""
+dependencies = [
+    "pandas",
+    "scikit-learn",
+    "matplotlib",
+    "tensorly",
+    "ruff"
+]
+
+[tool.setuptools]
+py-modules = []
+
+[tool.pyright]
+include = ["."]
+exclude = ["venv"]
+venvPath = "."
+venv = "venv"

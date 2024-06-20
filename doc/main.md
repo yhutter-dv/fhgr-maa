@@ -606,6 +606,9 @@ Dies trifft nur auf *quadratische Matrizen* zu, Stichwort (Covarrianz Matrix).
 Von einer diagonalen Matrix spricht man dann, wenn auf der Diagonalen lauter 1 stehen und an allen anderen Stellen 0.
 
 ## Matrix-Vektor-Multiplikation
+
+> Der zu multiplizierende Vektor benötigt genauso viele Einträge wie die Matrix Spalten hat, der Ergebnisvektor hat genauso viele Einträge wie die Matrix Zeilen hat. 
+
 Bei der Matrix-Vektor-Multiplikation wird jedes Element der Matrix mit jedem jedem Element des Vektors multipliziert und aufsummiert. Das Ergebnis ist ein Vektor.
 
 ![Matrix Vektor Multiplikation](./images/matrix_vektor_multiplikation.png)
